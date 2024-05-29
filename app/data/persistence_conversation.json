@@ -1,0 +1,124 @@
+{
+    "demanda_electrodomesticos" : {
+        "conversation" : {
+            "0" : {
+                "text" : "Hola!, soy Sibyl tu abogado basado en inteligencia artificial que te guiará para elaborar  demandas, con los estándares de calidad  propios de abogados expertos en la materia.",
+                "next" : "1"  
+            },
+            "1" : {
+                "text" : "Para comenzar, es necesario validar la siguiente información: ¿La compra del bien o servicio se realizó hace menos de un año?",
+                "expected_answer" : "choise",
+                "options" : {
+                    "si" : "2",
+                    "no" : "1.1",
+                    "otra" : "other"
+                },
+                "repeat_option" : "Pero para continuar es importante que respondas, ¿La compra del bien o servicio se realizó hace menos de un año?",
+                "is_finish" : false
+            },
+            "1.1" : {
+                "text" : "Ahhh!, Lamento informarte que ya prescribieron tus derechos para proceder a realizar una demanda ante la superintendencia de industria y comercio, según el artículo 10 de la ley 160 del 2010. La próxima oportunidad recuerda que estoy aquí para ayudarte. Ten en cuenta algunos de tus derechos para que lo tengas presentes (link redirecciona a pág web estatica: https://www.sic.gov.co/slider/los-derechos-del-consumidor-su-importancia-control-y-vigilancia)",
+                "expected_answer" : "finish",
+                "is_finish" : true
+            },
+            "2" : {
+                "text" : "Perfecto!, ahora me gustaría saber si ya realizaste una reclamación directa al vendedor/productor/ distribuidor autorizado del bien o servicio? art. 58 Ley 1480 de 2011, num 5.",
+                "expected_answer" : "choise",
+                "options" : {
+                    "si" : "3",
+                    "no" : "2.1",
+                    "otra" : "other"
+                },
+                "repeat_option" : "Pero para continuar es importante que respondas, ¿ya realizaste la reclamación directa?",
+                "is_finish" : false
+            },
+            "2.1" : {
+                "text" : "Ten en cuenta que sin la reclamación no se puede hacer la demanda, no hay problema!! simplemente debes hacer la reclamación directa antes de presentar la demanda. Ten en cuenta que la puedes hacer de forma escrita o verbal. Si es verbal, deberás afirmar bajo la gravedad de juramento cuando y en dónde la hiciste (art. 58 Ley 1480 de 2011).",
+                "expected_answer" : "finish",
+                "is_finish" : true
+            },
+            "3" : {
+                "text" : "Perfecto!, dime si la demanda fue verbal o escrita.",
+                "expected_answer" : "choise",
+                "options" : {
+                    "escrita" : "3.1",
+                    "verbal" : "3.2",
+                    "otra" : "other"
+                },
+                "repeat_option" : "Pero para continuar es importante que respondas, ¿si la demanda fue verbal o escrita?",
+                "is_finish" : false
+            },
+            "3.1" : {
+                "text" : "Que bien!, podrías cargar una copia escaneada/imagen del documento o correo electrónico?",
+                "expected_answer" : "charge",
+                "options" : {
+                    "data_obtenida" : "4",
+                    "otra" : "other"
+                },
+                "next" : "4",
+                "is_finish" : false
+            },
+            "3.2" : {
+                "text" : "Por favor describe la fecha y el modo (presencial o vía telefónica) en que hiciste la reclamación. Ten en cuenta que esta declaración se hará bajo la gravedad del juramento.",
+                "expected_answer" : "obtain_data",
+                "options" : {
+                    "data_obtenida" : "4",
+                    "otra" : "other"
+                },
+                "repeat_option" : "Pero para continuar es importante que me des la información solicitada.",
+                "is_finish" : false
+            },
+            "4" : {
+                "text" : "Vamos muy bien!, ahora necesito algunos datos tuyos y del vendedor, esto serán necesarios para la presentación de la demanda ante la autoridad correspondiente, empecemos por tí: \nRecuerda que todos tus datos personales serán confidenciales y tratados conforme a nuestra política de... (link a la política en otra ventana) \n\n\n- ¿Estás de acuerdo?",
+                "expected_answer" : "choise",
+                "options" : {
+                    "si" : "5",
+                    "no" : "4.1",
+                    "otra" : "other"
+                },
+                "repeat_option" : "Pero para continuar es importante que me des la información solicitada.",
+                "is_finish" : false
+            },
+            "4.1" : {
+                "text" : "Lamento informarte que sin tus datos no podemos continuar.",
+                "expected_answer" : "finish",
+                "is_finish" : true
+            },
+            "5" : {
+                "text" : "- Qué tipo de documento de identidad tienes? (opciones en tags: CC, CE, Pasaporte) \n- ingresa el número de tu documento de indentidad.\n- Ahora dime cuál es la dirección de tu domicilio\n-y la cuidad de tu domicilio es?\n-Por último, cuál es tu número fijo o celular? donde la superintendecia te podrá contactar en caso de ser necesario.",
+                "expected_answer" : "obtain_data",
+                "options" : {
+                    "data_obtenida" : "6",
+                    "otra" : "other"
+                },
+                "repeat_option" : "Pero para continuar es importante que me des la información solicitada.",
+                "is_finish" : false
+            },
+            "6" : {
+                "text" : "Ahora necesito que me informes cual es la razón social de la empresa o nombre de la persona que te vendió el producto o servicio por el que deseas reclamar tus derechos ante la SIC.",
+                "expected_answer" : "obtain_data_entity",
+                "options" : {
+                    "data_obtenida" : "7",
+                    "otra" : "other"
+                },
+                "repeat_option" : "Pero para continuar es importante que me des la información solicitada.",
+                "is_finish" : false
+            },
+            "7" : {
+                "text" : "Ya estamos próximos a terminar!, por último necesito que describas con el mayor nivel de detalle los hechos (daños o incumplimientos en el bien o servicio) por los cuales deseas reclamar?",
+                "expected_answer" : "obtain_data",
+                "options" : {
+                    "data_obtenida" : "8",
+                    "otra" : "other"
+                },
+                "repeat_option" : "Pero para continuar es importante que me des la información solicitada.",
+                "is_finish" : false
+            },
+            "8" : {
+                "text" : "Finalmente, estos son todos los datos que ingresaste, por favor verificalos antes de continuar. \n<datos>",
+                "expected_answer" : "finish_correctly",
+                "is_finish" : true
+            }
+        }
+    }
+}
